@@ -24,9 +24,9 @@ ipconfig (all)
 $ git init
 ```
 添加文件到到暂存区
-
+>将FileName换成"."添加所有文件
 ```cmd
-$ git add readme.md
+$ git add Filename
 ```
 ![版本库](https://www.liaoxuefeng.com/files/attachments/919020037470528/0)
 
@@ -116,5 +116,3 @@ git remote rm originName
 ```cmd
 git clone git@github.com:UserName/PepoName.git
 ```
-
-
