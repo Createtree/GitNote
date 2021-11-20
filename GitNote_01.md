@@ -1,5 +1,6 @@
-GitNote 1
----
+# GitNote 1
+
+## 初始配置
 >第一次使用配置全局设置
 >在C:/Users/用户名/.gitconfig中可以找到该文件
 ```cmd
@@ -28,8 +29,11 @@ ipconfig (all)
 ```cmd
 $ git init
 ```
+
+## 库管理操作
+
 添加文件到到暂存区
->将FileName换成"."添加所有文件
+>将FileName换成 "."可添加所有文件
 ```cmd
 $ git add Filename
 ```
@@ -130,6 +134,20 @@ $ git switch -c dev
 ```cmd
 $ git merge devName
 ```
+>==需要注意的是，所有分支共用一个暂存区==
+>切换分区时如果还有文件没有commit可以用stash暂存
+```cmd
+$ git stash save "saveMessage"
+```
+查看stash存储列表
+```
+$ git stash list
+```
+应用某个存储
+>默认第一个可加参数stash@{1}指定第二个
+```cmd
+$ git stash apply
+```
 
 ![image](https://www.liaoxuefeng.com/files/attachments/919022533080576/0)
 
@@ -174,5 +192,4 @@ $ git clone git@github.com:UserName/PepoName.git
 ```CMD
 $ git push -u originName PointName(master)
 ```
-
 
