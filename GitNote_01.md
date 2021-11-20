@@ -1,11 +1,16 @@
 GitNote 1
 ---
->第一次使用
+>第一次使用配置全局设置
+>在C:/Users/用户名/.gitconfig中可以找到该文件
 ```cmd
 $ git config --global user.name "your name"
 ```
 ```cmd
 $ git config --global user.email "your email"
+```
+显示全局设置
+```cmd
+$ git config --global --list
 ```
 常用CMD命令
 ```cmd
@@ -27,6 +32,11 @@ $ git init
 >将FileName换成"."添加所有文件
 ```cmd
 $ git add Filename
+```
+主目录下新建`.gitignore`并在config中加入excludesfile属性来排除不跟踪的文件，该属性可以添加到全局配置
+```cmd
+[core]
+	excludesfile = C:/Users/Administration/.gitignore
 ```
 ![版本库](https://www.liaoxuefeng.com/files/attachments/919020037470528/0)
 
@@ -83,6 +93,49 @@ $ git commit -m "remove filename"
 ```cmd
 $ git rm filename
 ```
+
+创建分支并切换到分支
+```cmd
+$ git branch devName
+$ git checkout devName
+```
+
+或者等效的一条命令
+```cmd
+$ git checkout -b devName
+```
+
+列出所有分支
+>'*'代表当前分支
+```cmd
+$ git branch
+```
+
+删除分支
+```cmd
+$ git branch -d devName
+```
+
+更好的切换命令
+```cmd
+$ git switch devName
+```
+
+创建并切换到新的分支
+```cmd
+$ git switch -c dev
+```
+
+合并某分支到当前分支
+```cmd
+$ git merge devName
+```
+
+![image](https://www.liaoxuefeng.com/files/attachments/919022533080576/0)
+
+
+
+## 远程库相关指令
 创建ssh密钥
 ```cmd
 $ ssh-keygen -t rsa -C "email@xxx.com"
@@ -109,10 +162,17 @@ $ git remote -v
 ```
 删除远程库
 ```cmd
-git remote rm originName
+$ git remote rm originName
 ```
 克隆远程库
 >第三个参数可以是https或者SSH,SSH更快
 ```cmd
-git clone git@github.com:UserName/PepoName.git
+$ git clone git@github.com:UserName/PepoName.git
 ```
+
+推送到远程库
+```CMD
+$ git push -u originName PointName(master)
+```
+
+
